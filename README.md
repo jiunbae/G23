@@ -18,5 +18,3 @@ In travel, there are so many accident occure.
 
 ## Develop Schdule
 You can check using commit log.
-
------
