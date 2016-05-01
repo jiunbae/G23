@@ -1,10 +1,6 @@
 #pragma once
 
-#include "cScene.h"
-
-#define STEP_LENGTH	  (TILE_SIZE/8)
-
-enum STATE{STATE_DIE, STATE_NOR, STATE_INF, STATE_STP};
+#include "Globals.h"
 
 typedef unsigned char colorByte;
 typedef tuple<colorByte, colorByte, colorByte> colorType;

@@ -9,7 +9,7 @@ void AppReshape(int w, int h)
 }
 void AppDisplay()
 {
-	Game.Render();
+	Game.display();
 }
 void AppKeyboard(unsigned char key, int x, int y)
 {
@@ -41,11 +41,13 @@ void main(int argc, char** argv)
 {
 	int res_x,res_y,pos_x,pos_y;
 
+	srand(time(NULL));
+
 	//GLUT initialization
 	glutInit(&argc, argv);
 
 	//RGBA with double buffer
-	glutInitDisplayMode(GLUT_RGBA | GLUT_ALPHA | GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE );
 
 	//Create centered window
 	res_x = glutGet(GLUT_SCREEN_WIDTH);

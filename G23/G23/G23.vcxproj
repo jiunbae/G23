@@ -24,7 +24,6 @@
     <ClCompile Include="cObject.cc" />
     <ClCompile Include="cData.cc" />
     <ClCompile Include="cGame.cc" />
-    <ClCompile Include="cOverlay.cc" />
     <ClCompile Include="cPlayer.cc" />
     <ClCompile Include="cScene.cc" />
     <ClCompile Include="cShader.cc" />
@@ -38,7 +37,6 @@
     <ClInclude Include="cObject.h" />
     <ClInclude Include="cData.h" />
     <ClInclude Include="cGame.h" />
-    <ClInclude Include="cOverlay.h" />
     <ClInclude Include="cPlayer.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cShader.h" />

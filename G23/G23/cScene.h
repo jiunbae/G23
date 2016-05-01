@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Globals.h"
+#include "cObject.h"
 
 #define SCENE_Xo		  0 
 #define SCENE_Yo		  0
@@ -18,12 +19,21 @@ public:
 class cScene
 {
 public:
+	float x, y;
 	cScene(void);
-	virtual ~cScene(void);
+	~cScene(void);
 
-	bool LoadLevel(int level, int tex_w, int tex_h);
-	void Draw(int tex_id,int tex_w,int tex_h,bool run);
-	void DrawAnimatedTiles(int tex_id,int tex_w,int tex_h);
+	void initilize();
+	bool LoadLevel(int level);
+	void display();
 
+protected:
+	class backDot : public cDot<float>, public cColor {
+	public:
+		backDot(int x, int y, colorType color ) : cDot(x,y) , cColor(color) {}
+	};
 private:
+	deque<backDot*> backs;
+
+	void backDisplay();
 };

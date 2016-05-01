@@ -1,19 +1,16 @@
 #pragma once
 
 #include "cObject.h"
-#include "cOverlay.h"
 #include "cData.h"
 #include "cShader.h"
 #include "cTimer.h"
+#include "cEnemy.h"
+#include "cPlayer.h"
+#include "cScene.h"
 
 #define FPS 60
 
-#define STATE_GAMEOVER    0
-#define STATE_RUN         1
-#define STATE_PAUSE       2
-#define STATE_MAINMENU    3
-#define STATE_LEVELCHANGE 4
-#define STATE_ENDGAME	  5
+enum GAME_STATE {STATE_INIT, STATE_RUN, STATE_PAUSE, STATE_MENU, STATE_LEVEL, STAET_GAMEOVER, STATE_ENDGAME};
 
 #define TOTAL_LEVELS	  2
 #define DYNAMIC_FILENAME  "dynamic_layer"
@@ -40,6 +37,7 @@ public:
 	virtual ~cGame(void);
 
 	bool Init(int level);
+	void display();
 	bool Loop();
 	void Finalize();
 
@@ -57,13 +55,15 @@ private:
 	cTimer<long, milli> timer;
 	int state, level;
 	cScene Scene;
-	cOverlay Overlay1;
-	cOverlay Overlay2;
+	//cOverlay Overlay1;
+	//cOverlay Overlay2;
 
 	unsigned char keys[256];
 	cRect visible_area;
-	bool p1_attacks, p2_attacks;
-	list<cObjectDot*> enemies;
+
+	cEnemy enemys;
+	cPlayer player;
+
 	cData Data;
 	cShader Shader;
 	

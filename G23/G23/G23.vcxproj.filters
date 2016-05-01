@@ -21,9 +21,6 @@
     <ClCompile Include="cGame.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="cOverlay.cc">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="cPlayer.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -53,9 +50,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cOverlay.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="cPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>

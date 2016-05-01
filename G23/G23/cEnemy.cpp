@@ -1,5 +1,13 @@
 #include "cEnemy.h"
 
+cEnemy::cEnemy()
+{
+}
+
+cEnemy::~cEnemy()
+{
+}
+
 void cEnemy::initilize()
 {
 	asteroids.clear();
@@ -41,4 +49,8 @@ void cEnemy::loop()
 			it = asteroids.erase(it);
 		}
 	}
+}
+
+void cEnemy::idle()
+{
 }

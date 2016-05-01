@@ -5,19 +5,21 @@ cData::~cData(void){}
 
 int cData::GetID(int img)
 {
-	return textures[img].GetID();
+	return textures[img].getID();
 }
 
 void cData::GetSize(int img, int *w, int *h)
 {
-	textures[img].GetSize(w,h);
+	pair<int, int> wh = textures[img].getSize();
+	*w = wh.first;
+	*h = wh.second;
 }
 
 bool cData::LoadImage(int img, char *filename, int type)
 {
 	int res;
 
-	res = textures[img].Load(filename,type);
+	res = textures[img].loatTexture(type,filename);
 	if(!res) return false;
 
 	return true;
