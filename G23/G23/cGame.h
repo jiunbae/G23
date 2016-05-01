@@ -1,14 +1,10 @@
 #pragma once
 
 #include "cObject.h"
-#include "cToken.h"
 #include "cOverlay.h"
 #include "cData.h"
 #include "cShader.h"
 #include "cTimer.h"
-
-#define GAME_WIDTH	600
-#define GAME_HEIGHT 800
 
 #define FPS 60
 
@@ -67,8 +63,7 @@ private:
 	unsigned char keys[256];
 	cRect visible_area;
 	bool p1_attacks, p2_attacks;
-	list<cObject*> enemies;
-	list<cToken*> tokens;
+	list<cObjectDot*> enemies;
 	cData Data;
 	cShader Shader;
 	

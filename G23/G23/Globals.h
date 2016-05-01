@@ -8,8 +8,8 @@
 #pragma once
 
 //this for window
-#define WIN_X 			800
-#define WIN_Y 			600
+#define GAME_WIDTH	600
+#define GAME_HEIGHT 800
 #define WIN_F 			0 | 1 | 5
 
 //this for program

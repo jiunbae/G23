@@ -36,9 +36,6 @@
     <ClCompile Include="cTexture.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="cToken.cc">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="cObject.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -48,7 +45,10 @@
     <ClCompile Include="cBullet.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="cWeapon.cpp">
+    <ClCompile Include="cWeapon.cc">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cEnemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,9 +66,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="cTexture.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="cToken.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="cData.h">
@@ -92,5 +89,8 @@
     <ClInclude Include="cEnemy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

@@ -20,7 +20,7 @@
 #define STATE_SKILLWALKDOWN	 25
 #define STATE_SKILLWALKLEFT	 26
 
-class cPlayer: public cObject
+class cPlayer: public cObjectDot
 {
 public:
 	cPlayer();

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cBullet.cc" />
+    <ClCompile Include="cEnemy.cpp" />
     <ClCompile Include="cObject.cc" />
     <ClCompile Include="cData.cc" />
     <ClCompile Include="cGame.cc" />
@@ -28,8 +29,7 @@
     <ClCompile Include="cScene.cc" />
     <ClCompile Include="cShader.cc" />
     <ClCompile Include="cTexture.cc" />
-    <ClCompile Include="cToken.cc" />
-    <ClCompile Include="cWeapon.cpp" />
+    <ClCompile Include="cWeapon.cc" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -44,8 +44,10 @@
     <ClInclude Include="cShader.h" />
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cTimer.h" />
-    <ClInclude Include="cToken.h" />
     <ClInclude Include="Globals.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4A6FC8E8-9CDC-485A-BB90-CF3E35459632}</ProjectGuid>

@@ -3,24 +3,20 @@
 #include "Globals.h"
 #include "cObject.h"
 
-class cAsteroid : public cObject {
-public:
-	cAsteroid();
-	~cAsteroid();
+typedef cObjectBox cAsteroid;
+typedef deque<cAsteroid*> cAsteroids;
 
-private:
-};
-
-class cEnemy {
+class cEnemy : public cColor {
 public:
 	cEnemy();
 	~cEnemy();
 
 	void initilize();
+	void newEnemy(const float x, const float y, const float angle, const int state);
 	void display();
 	void loop();
 	void idle();
 
 private:
-	deque<cAsteroid*> asteroids;
+	cAsteroids asteroids;
 };

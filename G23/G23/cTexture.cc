@@ -8,57 +8,53 @@ cTexture::~cTexture(void)
 {
 }
 
-bool cTexture::Load(char *filename,int type,int wraps,int wrapt,int magf,int minf,bool mipmap)
+bool cTexture::loatTexture(ILenum fileType, string fileName)
 {
-	corona::Image* img;
-	int components;
+	ilLoad(fileType, fileName.c_str());
+	width = ilGetInteger(IL_IMAGE_WIDTH);
+	height = ilGetInteger(IL_IMAGE_HEIGHT);
+	bpp = ilGetInteger(IL_IMAGE_BYTES_PER_PIXEL);
 
-	img = corona::OpenImage(filename);
-	if(type==GL_RGB)
-	{
-		//img = corona::OpenImage(filename,corona::PF_R8G8B8);
-		components = 3;
-	}
-	else if(type==GL_RGBA)
-	{
-		//img = corona::OpenImage(filename,corona::PF_R8G8B8A8);
-		components = 4;
-	}
-	else return false;
+	imageData = ilGetData();
 
-	if(img==NULL) return false;
+	ilEnable(IL_CONV_PAL);
 
-	width  = img->getWidth();
-	height = img->getHeight();
+	unsigned int type = ilGetInteger(IL_IMAGE_FORMAT);
 
 	glGenTextures(1, &id);
-	glBindTexture(GL_TEXTURE_2D,id);
+	glBindTexture(GL_TEXTURE_2D, id);
 
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,wraps);
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,wrapt);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, bpp, width, height, type, GL_UNSIGNED_BYTE, imageData);
+	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,magf);
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,minf);
-
-	if(!mipmap)
-	{
-		glTexImage2D(GL_TEXTURE_2D,0,components,width,height,0,type,
-					 GL_UNSIGNED_BYTE,img->getPixels());
-	}
-	else
-	{
-		gluBuild2DMipmaps(GL_TEXTURE_2D,components,width,height,type,
-						  GL_UNSIGNED_BYTE,img->getPixels());
-	}
-
-	return true;
+	return false;
 }
-int cTexture::GetID()
+
+void cTexture::drawTexture(float x, float y, int type)
+{
+	drawTexture(x, y, type, width, height);
+}
+void cTexture::drawTexture(float x, float y, int type, float width, float height)
+{
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, id);
+
+	glBegin(GL_QUADS);
+	glTexCoord2f(0, 1); glVertex3f(x + -width / 2, y + -height / 2, 0);
+	glTexCoord2f(1, 1); glVertex3f(x + width / 2, y + -height / 2, 0);
+	glTexCoord2f(1, 0); glVertex3f(x + width / 2, y + height / 2, 0);
+	glTexCoord2f(0, 0); glVertex3f(x + -width / 2, y + height / 2, 0);
+	glEnd();
+
+	glDisable(GL_TEXTURE_2D);
+}
+int cTexture::getID()
 {
 	return id;
 }
-void cTexture::GetSize(int *w,int *h)
+pair<GLuint, GLuint> cTexture::getSize()
 {
-	*w = width;
-	*h = height;
+	return{ width, height };
 }

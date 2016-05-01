@@ -6,82 +6,73 @@
 
 enum STATE{STATE_DIE, STATE_NOR, STATE_INF, STATE_STP};
 
-class cObject
-{
+typedef unsigned char colorByte;
+typedef tuple<colorByte, colorByte, colorByte> colorType;
+
+class cColor {
 public:
-	cObject(void);
-	virtual ~cObject(void);
+	cColor();
+	cColor(colorType _color);
+	~cColor();
 
-	void SetPosition(int x,int y);
-	void SetX(int x);
-	int  GetX();
-	void SetY(int y);
-	int  GetY();
-	void SetBaseTilesHeight(int bth);
-	int  GetBaseHeight();
-	void SetBaseTilesWidth(int btw);
-	int  GetBaseWidth();
-	void SetHitHeight(int hh);
-	int GetHitHeight();
-	void SetHitWidth(int hw);
-	int GetHitWidth();
+	void setColor(colorType _color);
+	colorType getColor();
 
-	void SetState(int s);
-	int  GetState();
-
-	bool IsLooking();
-	bool IsWalking();
-	bool IsAttacking();
-	bool IsDamaged();
-
-	cRect GetHitBox();
-	bool Intersection(cRect box1, cRect box2);
-	bool Intersection(cRect box1,int px,int py);
-
-	virtual void Draw(int tex_id,int tex_w,int tex_h,bool run) {};
-
-	void Stop();
 private:
-	int x, y, hit_w, hit_h, base_tiles_w, base_tiles_h, state;
+	colorType color;
+};
+
+template <typename T>
+class cDot {
+public:
+	cDot() {};
+	cDot(T _x, T _y) : x(_x), y(_y) {};
+	~cDot() {};
+
+	void setX(T _x) { x = _x; }
+	void setY(T _y) { y = _y; }
+	void setPosition(T _x, T _y) { setX(_x); setY(_y); }
+	void setPosition(pair<T, T> xy) { setX(xy.first); setY(xy.second); }
+	T getX() { return x; }
+	T getY() { return y; }
+	pair<T, T> getPosition() { return{ x,y }; };
+
+private:
+	T x, y;
+};
+
+template <typename T>
+class cVolume {
+public:
+	cVolume() {};
+	cVolume(T _w, T _h) : w(_w), h(_h) {};
+	~cVolume() {};
+
+	void setW(T _w) { w = _w; }
+	void setH(T _h) { h = _h; }
+	void setVolume(T _w, T _h) { setW(_w);setH(_h); };
+	T getW() { return w; }
+	T getH() { return h; }
+	pair<T, T> getVolume() { return{ w,h }; };
+
+private:
+	T w, h;
 };
 
 template <typename T>
 class cMove {
 public:
 	cMove() {}
-	~cMove() {};
+	cMove(T _vx, T _vy) : vx(_vx), vy(_vy) {}
+	cMove(T _vx, T _vy, T _ax, T _ay) : ax(_ax), ay(_ay) { cMove(_vx, _vy); }
+	~cMove() {}
 
-	void move()
+	pair<T, T> move(T x, T y)
 	{
 		x += vx;
 		y += vy;
 		vx += ax;
 		vy += ay;
-	}
-
-	void setX(T _x)
-	{
-		x = _x;
-	}
-	T getX()
-	{
-		return x;
-	}
-	void setY(T _y)
-	{
-		y = _y;
-	}
-	T getY()
-	{
-		return y;
-	}
-	void setPosition(T x, T y)
-	{
-		setX(x);
-		setY(y);
-	}
-	pair<T, T> getPosition()
-	{
 		return{ x,y };
 	}
 
@@ -89,22 +80,22 @@ public:
 	{
 		vx = _x;
 	}
-	T getVx()
-	{
-		return vx;
-	}
 	void setVy(T _y)
 	{
 		vy = _y;
-	}
-	T getVy()
-	{
-		return vy;
 	}
 	void setVelocity(T x, T y)
 	{
 		setVx(x);
 		setVy(y);
+	}
+	T getVx()
+	{
+		return vx;
+	}
+	T getVy()
+	{
+		return vy;
 	}
 	pair<T, T> getVelocity()
 	{
@@ -115,35 +106,57 @@ public:
 	{
 		ax = _x;
 	}
-	T getAx()
-	{
-		return ax;
-	}
 	void setAy(T _y)
 	{
 		ay = _y;
-	}
-	T getAy()
-	{
-		return ay;
 	}
 	void setAcceleration(T x, T y)
 	{
 		setAx(x);
 		setAy(y);
 	}
+	T getAx()
+	{
+		return ax;
+	}
+	T getAy()
+	{
+		return ay;
+	}
 	pair<T, T> getAcceleration()
 	{
 		return{ ax,ay };
 	}
 
-	bool isValid()
-	{
-		if ((x < 0 && vx <0) || (y < 0 && vy < 0) || (x > GAME_WIDTH && vx > 0) || (y > GAME_HEIGHT && vy > 0))
-			return false;
-		return true;
-	}
+private:
+	T vx, vy, ax, ay;
+};
+
+class cObjectDot : public cDot <float>, public cMove <float> {
+public:
+	cObjectDot();
+	cObjectDot(float x, float y);
+	cObjectDot(float x, float y, float vx, float vy);
+	cObjectDot(float x, float y, float vx, float vy, float ax, float ay);
+	~cObjectDot();
+
+	void setState(int _state);
+	int getState();
+
+	bool isValid();
 
 private:
-	T x, y, vx, vy, ax, ay;
+	int state = 0;
 };
+
+class cObjectBox : public cObjectDot, public cVolume<float>, public cColor {
+public:
+	cObjectBox();
+	cObjectBox(float x, float y);
+	cObjectBox(float x, float y, float w, float h);
+	~cObjectBox();
+
+private:
+	
+};
+

@@ -1,113 +1,94 @@
 #include "cObject.h"
 
-cObject::cObject(void)
+cObjectDot::cObjectDot()
 {
-	state = STATE_NOR;
-}
-cObject::~cObject(void){}
-
-void cObject::SetPosition(int posx,int posy)
-{
-	x = posx;
-	y = posy;
-}
-void cObject::SetX(int posx)
-{
-	x = posx;
-}
-int cObject::GetX()
-{
-	return x;
-}
-void cObject::SetY(int posy)
-{
-	y = posy;
-}
-int cObject::GetY()
-{
-	return y;
-}
-void cObject::SetBaseTilesHeight(int bth)
-{
-	base_tiles_h = bth;
-}
-int cObject::GetBaseHeight()
-{
-	return base_tiles_h*TILE_SIZE;
-}
-void cObject::SetBaseTilesWidth(int btw)
-{
-	base_tiles_w = btw;
-}
-int cObject::GetBaseWidth()
-{
-	return base_tiles_w*TILE_SIZE;
-}
-void cObject::SetHitHeight(int hh)
-{
-	hit_h = hh;
-}
-int cObject::GetHitHeight()
-{
-	return hit_h;
-}
-void cObject::SetHitWidth(int hw)
-{
-	hit_w = hw;
-}
-int cObject::GetHitWidth()
-{
-	return hit_w;
+	setPosition(0, 0);
+	setVelocity(0, 0);
+	setAcceleration(0, 0);
 }
 
-cRect cObject::GetHitBox()
+cObjectDot::cObjectDot(float x, float y)
 {
-	return cRect( y + hit_h, y, x, x + hit_w );
-}
-bool cObject::Intersection(cRect box1, cRect box2)
-{
-	if(box1.top > box2.bottom && box2.top > box1.bottom)
-	{
-		if(box1.left < box2.right && box2.left < box1.right) return true;
-	}
-	return false;
-}
-bool cObject::Intersection(cRect box1, int px, int py)
-{
-	if(px >= box1.left && px < box1.right && py >= box1.bottom && py < box1.top) return true; 
-	return false;
+	cObjectDot();
+	setPosition(x, y);
 }
 
-int cObject::GetState()
+cObjectDot::cObjectDot(float x, float y, float vx, float vy)
+{
+	cObjectDot(x, y);
+	setVelocity(vx, vy);
+}
+
+cObjectDot::cObjectDot(float x, float y, float vx, float vy, float ax, float ay)
+{
+	cObjectDot(x, y, vx, vy);
+	setAcceleration(ax, ay);
+}
+
+cObjectDot::~cObjectDot()
+{
+}
+
+void cObjectDot::setState(int _state)
+{
+	state = _state;
+}
+
+int cObjectDot::getState()
 {
 	return state;
 }
-void cObject::SetState(int s)
+
+bool cObjectDot::isValid()
 {
-	state = s;
+	if ((getX() < 0 && getVx() < 0) || (getY() < 0 && getVy() < 0) ||
+		(getX() > GAME_WIDTH && getVx() > 0) || (getY() > GAME_HEIGHT && getVy() > 0))
+		return false;
+	return true;
 }
 
-bool cObject::IsLooking()
+cColor::cColor()
 {
-	//if( state == STATE_LOOKUP   || state == STATE_LOOKDOWN || 
-	//    state == STATE_LOOKLEFT || state == STATE_LOOKRIGHT ) return true;
-	return false;
 }
-bool cObject::IsWalking()
+
+cColor::cColor(colorType _color) : color(_color)
 {
-	//if( state == STATE_WALKUP   || state == STATE_WALKDOWN || 
-	//    state == STATE_WALKLEFT || state == STATE_WALKRIGHT ) return true;
-	return false;
 }
-bool cObject::IsAttacking()
+
+cColor::~cColor()
 {
-	//if( state == STATE_ATTACKUP   || state == STATE_ATTACKDOWN  || 
-	//    state == STATE_ATTACKLEFT || state == STATE_ATTACKRIGHT  ) return true;
-	return false;
 }
-bool cObject::IsDamaged()
+
+void cColor::setColor(colorType _color)
 {
-	//if( state == STATE_DAMAGEUP   || state == STATE_DAMAGEDOWN || 
-	//    state == STATE_DAMAGELEFT || state == STATE_DAMAGERIGHT ) return true;
-	return false;
+	color = _color;
+}
+
+colorType cColor::getColor()
+{
+	return color;
+}
+
+cObjectBox::cObjectBox()
+{
+	setPosition(0, 0);
+	setVelocity(0, 0);
+	setAcceleration(0, 0);
+	setVolume(0, 0);
+	setColor(make_tuple(0, 0, 0));
+}
+
+cObjectBox::cObjectBox(float x, float y) : cObjectDot(x, y)
+{
+	cObjectBox();
+}
+
+cObjectBox::cObjectBox(float x, float y, float w, float h)
+{
+	cObjectBox(x, y);
+	setVolume(w, h);
+}
+
+cObjectBox::~cObjectBox()
+{
 }

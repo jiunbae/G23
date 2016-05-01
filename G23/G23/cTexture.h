@@ -1,9 +1,12 @@
 #pragma once
 
-#pragma comment(lib,"corona")
-
 #include "Globals.h"
-#include "corona.h"
+#pragma comment(lib,"DevIL.lib")
+#pragma comment(lib,"ilut.lib")
+#pragma comment(lib,"ilu.lib")
+
+#include "Il/il.h"
+#include "IL/ilu.h"
 
 class cTexture
 {
@@ -11,12 +14,16 @@ public:
 	cTexture(void);
 	~cTexture(void);
 
-	bool Load(char *filename,int type = GL_RGBA,int wraps = GL_REPEAT,int wrapt = GL_REPEAT,
-			  int magf = GL_NEAREST,int minf = GL_NEAREST,bool mipmap = false);
-	int  GetID();
-	void GetSize(int *w,int *h);
+	bool loatTexture(ILenum fileType, string fileName);
+	
+	void drawTexture(float x, float y, int type);
+	void drawTexture(float x, float y, int type, float width, float height);
+
+	int  getID();
+	pair<GLuint, GLuint> getSize();
 
 private:
 	GLuint id;
-	int width,height;
+	GLubyte * imageData;
+	GLuint width, height, bpp;
 };

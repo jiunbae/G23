@@ -86,14 +86,6 @@ void cGame::Render()
 
 
 	Data.GetSize(IMG_HEART,&tex_w,&tex_h);
-	std::list<cToken*>::iterator it_t;
-	for(it_t=tokens.begin(); it_t!=tokens.end(); it_t++) 
-	{
-		if(dynamic_cast<cHeart*>(*it_t) != NULL)
-		{
-			(*it_t)->Draw(Data.GetID(IMG_HEART),tex_w,tex_h,run);
-		}
-	}
 
 	Overlay1.Draw(Data.GetID(IMG_OVERLAY1));
 	Overlay2.Draw(Data.GetID(IMG_OVERLAY2));
