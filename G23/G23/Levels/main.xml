@@ -1,0 +1,6 @@
+<type map >
+	<info title=start mission=find_station size=2000 >
+	<astroids count=50 size=30 texture=Textures/astorids1.png >
+	<object x=1800 y=900 name=station texture=Textures/station.png >
+	<next file=level/map1.xml >
+</type >
