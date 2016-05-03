@@ -27,9 +27,17 @@ void AppSpecialKeysUp(int key, int x, int y)
 {
 	Game.ReadSpecialKeyboard(key,x,y,false);
 }
-void AppMouse(int button, int state, int x, int y)
+void AppMouse(int button, int state, int, int)
 {
-	Game.ReadMouse(button,state,x,y);
+	Game.ReadMouse(button,state);
+}
+void AppMotion(int x, int y)
+{
+	Game.ReadMotion(x, y);
+}
+void AppPassivMotion(int x, int y)
+{
+	Game.ReadPassivMotion(x, y);
 }
 void AppIdle()
 {
@@ -67,6 +75,8 @@ void main(int argc, char** argv)
 	glutSpecialFunc(AppSpecialKeys);
 	glutSpecialUpFunc(AppSpecialKeysUp);
 	glutMouseFunc(AppMouse);
+	glutMotionFunc(AppMotion);
+	glutPassiveMotionFunc(AppPassivMotion);
 	glutIdleFunc(AppIdle);
 
 	//GLEW initialization
@@ -75,7 +85,7 @@ void main(int argc, char** argv)
 		exit(EXIT_FAILURE);
 
 	//Game initializations
-	Game.Init(1);
+	Game.initilize(1);
 
 	//Application loop
 	glutMainLoop();	

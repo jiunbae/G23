@@ -14,10 +14,12 @@ public:
 	cTexture(void);
 	~cTexture(void);
 
-	bool loatTexture(ILenum fileType, string fileName);
+	void initilize();
+
+	bool loadTexture(ILenum fileType, string fileName);
 	
-	void drawTexture(float x, float y, int type);
-	void drawTexture(float x, float y, int type, float width, float height);
+	void drawTexture(float x, float y);
+	void drawTexture(float x, float y, float width, float height);
 
 	int  getID();
 	pair<GLuint, GLuint> getSize();

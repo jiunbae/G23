@@ -2,8 +2,8 @@
 #include "Globals.h"
 #include "cObject.h"
 
-typedef unsigned char colorByte;
-typedef tuple<colorByte, colorByte, colorByte> colorType;
+typedef cObjectDot* cBullet;
+typedef deque<cBullet> cBullets;
 
 class cWeapon : public cColor {
 public:
@@ -15,9 +15,9 @@ public:
 
 	void display();
 	void loop();
-	void idle();
 
 private:
-	deque<cObjectDot*> bullets;
-
+	float speed =1 ;
+	cBullets bullets;
+	cTimer<long, std::milli> timer;
 };

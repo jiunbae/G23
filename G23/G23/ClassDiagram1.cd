@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="cColor" Collapsed="true">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="8" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAIAAA=</HashCode>
+      <HashCode>AAEAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAgAAIAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cRotate" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABCAAACQA=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -15,53 +22,39 @@
     </TypeIdentifier>
   </Class>
   <Class Name="cVolume&lt;T&gt;" Collapsed="true">
-    <Position X="3.5" Y="2.25" Width="1.5" />
+    <Position X="5.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAgAAEAAAAAAAAQAgAgAAIQAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAIAAABAAAgAAAAAAAAAAAQAgAgAAIQAA=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="cMove&lt;T&gt;" Collapsed="true">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>FAAAAAAQAAAIBAABAoABAAAAAgAAgAAAAQBACABQIAA=</HashCode>
+      <HashCode>FAAAAAAQAAAIBACBAoABAAAAAgAAgAAAAQBACABQIAA=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="cObjectDot" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAEAAACAAAAAAQ=</HashCode>
+      <HashCode>QAAAAAAAAAAACAAgAAAAAAAAAAAAAAAEAAACAAAAAAQ=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="cObjectBox" Collapsed="true">
     <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAgAAAAIAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Typedef Name="colorByte" Collapsed="true">
-    <Position X="5.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>cObject.h</FileName>
-    </TypeIdentifier>
-  </Typedef>
   <Typedef Name="colorType" Collapsed="true">
-    <Position X="7.25" Y="2.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>cObject.h</FileName>
     </TypeIdentifier>
   </Typedef>
-  <Enum Name="STATE">
-    <Position X="8.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAgAAAAAIAAAAAgA=</HashCode>
-      <FileName>cObject.h</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="맑은 고딕" Size="9" />
 </ClassDiagram>

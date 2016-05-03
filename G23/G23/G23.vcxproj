@@ -21,31 +21,26 @@
   <ItemGroup>
     <ClCompile Include="cBullet.cc" />
     <ClCompile Include="cEnemy.cpp" />
+    <ClCompile Include="cIO.cpp" />
     <ClCompile Include="cObject.cc" />
-    <ClCompile Include="cData.cc" />
     <ClCompile Include="cGame.cc" />
     <ClCompile Include="cPlayer.cc" />
     <ClCompile Include="cScene.cc" />
-    <ClCompile Include="cShader.cc" />
     <ClCompile Include="cTexture.cc" />
     <ClCompile Include="cWeapon.cc" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cEnemy.h" />
+    <ClInclude Include="cIO.h" />
     <ClInclude Include="cWeapon.h" />
     <ClInclude Include="cObject.h" />
-    <ClInclude Include="cData.h" />
     <ClInclude Include="cGame.h" />
     <ClInclude Include="cPlayer.h" />
     <ClInclude Include="cScene.h" />
-    <ClInclude Include="cShader.h" />
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cTimer.h" />
     <ClInclude Include="Globals.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4A6FC8E8-9CDC-485A-BB90-CF3E35459632}</ProjectGuid>
@@ -58,7 +53,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>

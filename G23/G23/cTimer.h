@@ -34,7 +34,7 @@ public:
 	R getDeltaPoint()
 	{
 		if (flag == timePoint())
-			return (R)0;
+			return (R)LONG_MAX;
 		return duration_cast<duration<R, T>>(getPoint() - flag).count();
 	}
 	R getDeltaTimePoint(const timePoint& tp)

@@ -1,6 +1,10 @@
 #pragma once
 
+#include "Globals.h"
 #include "cObject.h"
+#include "cWeapon.h"
+#include "cTexture.h"
+#include "cIO.h"
 
 #define CHARGE_BREAK   30
 #define COOLDOWN		6
@@ -20,7 +24,7 @@
 #define STATE_SKILLWALKDOWN	 25
 #define STATE_SKILLWALKLEFT	 26
 
-class cPlayer: public cObjectDot
+class cPlayer: public cObjectBox
 {
 public:
 	cPlayer();
@@ -29,9 +33,19 @@ public:
 	void initilize();
 	void display();
 	void loop();
-	void idle();
+	void ReadKeyboard(unsigned char key, int x, int y, bool press);
+	void ReadMouse(int button, int state);
+	void ReadMouseMove(float x, float y);
 
+	cWeapon	weapon;
 
 private:
+	bool key_up = false, key_down = false, key_left = false, key_right = false;
+	float velocity = 0.5f, acceleration;
 	int level, score, hp, mp, max_hp, max_mp;
+	bool holdMouse;
+	cTexture texture;
+	cMouse mouse;
+	cTimer<long, milli> timer;
+
 };

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cData.cc">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="cGame.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -25,9 +22,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="cScene.cc">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="cShader.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="cTexture.cc">
@@ -48,6 +42,9 @@
     <ClCompile Include="cEnemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="cIO.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cPlayer.h">
@@ -56,13 +53,7 @@
     <ClInclude Include="cScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="cShader.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="cTexture.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="cData.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="cGame.h">
@@ -83,8 +74,8 @@
     <ClInclude Include="cEnemy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <ClInclude Include="cIO.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -39,6 +39,7 @@
 #include "glew.h"
 #include "glut.h"
 
+#include <iostream>
 #include <fstream>
 #include <utility>
 #include <vector>
@@ -52,6 +53,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "cTimer.h"
 
-
+static int map_x = 0, map_y = 0;
 using namespace std;

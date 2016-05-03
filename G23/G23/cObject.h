@@ -18,12 +18,25 @@ private:
 	colorType color;
 };
 
+class cRotate {
+public:
+	cRotate() {}
+	cRotate(float _r) : r(_r) {}
+	~cRotate() {}
+
+	void setR(float _r) { r = _r; }
+	float getR() { return r; }
+
+private:
+	float r;
+};
+
 template <typename T>
 class cDot {
 public:
-	cDot() {};
-	cDot(T _x, T _y) : x(_x), y(_y) {};
-	~cDot() {};
+	cDot() {}
+	cDot(T _x, T _y) : x(_x), y(_y) {}
+	~cDot() {}
 
 	void setX(T _x) { x = _x; }
 	void setY(T _y) { y = _y; }
@@ -145,7 +158,7 @@ private:
 	int state = 0;
 };
 
-class cObjectBox : public cObjectDot, public cVolume<float>, public cColor {
+class cObjectBox : public cObjectDot, public cVolume<float>, public cColor, public cRotate {
 public:
 	cObjectBox();
 	cObjectBox(float x, float y);
@@ -155,4 +168,3 @@ public:
 private:
 	
 };
-

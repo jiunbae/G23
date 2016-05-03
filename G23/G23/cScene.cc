@@ -25,7 +25,7 @@ void cScene::display()
 	glColor3f(1.0f, 1.0f, 1.0f);
 	glLineWidth(5);
 	glBegin(GL_LINES);
-
+	
 	glEnd();
 	glLineWidth(1);
 }
@@ -43,4 +43,25 @@ void cScene::backDisplay()
 		glVertex2f(x / 2 + (*it)->getX(), y / 2 + (*it)->getY());
 		glEnd();
 	}
+}
+
+cCamera::cCamera()
+{
+	setPosition(0.f, 0.f);
+	setVolume(GAME_WIDTH, GAME_HEIGHT);
+	setR(100.f);
+}
+
+cCamera::~cCamera()
+{
+}
+
+void cCamera::updateCamera(float x, float y)
+{
+	setPosition(x, y);
+}
+
+void cCamera::updateRatio(float r)
+{
+	setR(r);
 }

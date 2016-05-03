@@ -2,19 +2,28 @@
 
 cGame::cGame(void)
 {
+
 }
 cGame::~cGame(void)
 {
 }
 
-bool cGame::Init(int level)
+bool cGame::initilize(int level)
 {
 	glMatrixMode(GL_PROJECTION);
-	glutSetCursor(GLUT_CURSOR_NONE);
+	//glutSetCursor(GLUT_CURSOR_NONE);
 	glLoadIdentity();
 	glOrtho(-GAME_WIDTH / 2, GAME_WIDTH / 2, -GAME_HEIGHT / 2, GAME_HEIGHT / 2, -1, 1);
 
-	Scene.initilize();
+	dataClass datas = data.loadMap("Levels\\main.xml");
+	setVolume(datas.size, datas.size);
+	title = datas.title;
+	mission = datas.mission;
+	
+	enemys.initilize(datas.size, datas.astroids.count ,datas.astroids.texture);
+
+	scene.initilize();
+	player.initilize();
 	return true;
 }
 
@@ -24,7 +33,7 @@ void cGame::display()
 	{
 		case STATE_INIT:
 			glClear(GL_COLOR_BUFFER_BIT);
-				Scene.display();
+				scene.display();
 				enemys.display();
 				player.display();
 			glutSwapBuffers();
@@ -38,6 +47,8 @@ void cGame::display()
 
 bool cGame::Loop()
 {
+	enemys.loop();
+	player.loop();
 	display();
 	return true;
 }
@@ -52,21 +63,21 @@ void cGame::ReadKeyboard(unsigned char key, int x, int y, bool press)
 	switch (key)
 	{
 		case 'a':
-			Scene.x -= 50;
+			scene.x -= 50;
 			break;
 		case 'w':
-			Scene.y -= 50;
+			scene.y -= 50;
 			break;
 		case 'd':
-			Scene.x += 50;
+			scene.x += 50;
 			break;
 		case 's':
-			Scene.y += 50;
+			scene.y += 50;
 			break;
 		default:
 			break;
 	}
-
+	player.ReadKeyboard(key, x, y, press);
 }
 
 void cGame::ReadSpecialKeyboard(unsigned char key, int x, int y, bool press)
@@ -74,8 +85,21 @@ void cGame::ReadSpecialKeyboard(unsigned char key, int x, int y, bool press)
 }
 
 
-void cGame::ReadMouse(int button, int state, int x, int y)
+void cGame::ReadMouse(int button, int state)
 {
+	player.ReadMouse(button, state);
+}
+
+void cGame::ReadMotion(int x, int y)
+{
+	mouse.initilize(x, y);
+	player.ReadMouseMove(mouse.x, mouse.y);
+}
+
+void cGame::ReadPassivMotion(int x, int y)
+{
+	mouse.initilize(x, y);
+	player.ReadMouseMove(mouse.x, mouse.y);
 }
 
 //Process

@@ -1,12 +1,10 @@
 #pragma once
 
 #include "cObject.h"
-#include "cData.h"
-#include "cShader.h"
-#include "cTimer.h"
 #include "cEnemy.h"
 #include "cPlayer.h"
 #include "cScene.h"
+#include "cIO.h"
 
 #define FPS 60
 
@@ -30,13 +28,13 @@ enum GAME_STATE {STATE_INIT, STATE_RUN, STATE_PAUSE, STATE_MENU, STATE_LEVEL, ST
 #define P2_ATTACK	'*'
 #define P2_SKILL	'-'
 
-class cGame
+class cGame : public cVolume<float>
 {
 public:
 	cGame(void);
 	virtual ~cGame(void);
 
-	bool Init(int level);
+	bool initilize(int level);
 	void display();
 	bool Loop();
 	void Finalize();
@@ -44,7 +42,10 @@ public:
 	//Input
 	void ReadKeyboard(unsigned char key, int x, int y, bool press);
 	void ReadSpecialKeyboard(unsigned char key, int x, int y, bool press);
-	void ReadMouse(int button, int state, int x, int y);
+	void ReadMouse(int button, int state);
+	void ReadMotion(int x, int y);
+	void ReadPassivMotion(int x, int y);
+
 	//Process
 	bool Process();
 	void Reshape(int w,int h);
@@ -53,23 +54,16 @@ public:
 
 private:
 	cTimer<long, milli> timer;
-	int state, level;
-	cScene Scene;
-	//cOverlay Overlay1;
-	//cOverlay Overlay2;
+	cScene scene;
+	cCamera camera;
+	cMouse mouse;
+	cData data;
 
-	unsigned char keys[256];
-	cRect visible_area;
-
-	cEnemy enemys;
 	cPlayer player;
+	cEnemy enemys;
 
-	cData Data;
-	cShader Shader;
-	
-	float time;
-	bool ia, epilepsia_mode;
+	string title, mission;
+	int state, level;
+	unsigned char keys[256];
 
-	void UpdateCamera(int h1,int h2);
-	bool LoadDynamicLayer(int lvl);
 };

@@ -8,12 +8,14 @@
 #define SCENE_WIDTH		  20
 #define SCENE_HEIGHT	  160
 
-class cRect
-{
+class cCamera : public cDot<float>, public cVolume<float>, public cRotate {
 public:
-	int left, top, right, bottom;
-	cRect() {};
-	cRect(int left, int top, int right, int bottom) : left(left), top(top), right(right), bottom(bottom) {};
+	cCamera();
+	~cCamera();
+
+	void updateCamera(float x, float y);
+	void updateRatio(float r);
+private:
 };
 
 class cScene
