@@ -18,16 +18,14 @@ public:
 private:
 };
 
-class cScene
+class cScene : public cDot<float>
 {
 public:
-	float x, y;
 	cScene(void);
 	~cScene(void);
 
 	void initilize();
-	bool LoadLevel(int level);
-	void display();
+	void display(float x, float y);
 
 protected:
 	class backDot : public cDot<float>, public cColor {
@@ -37,5 +35,5 @@ protected:
 private:
 	deque<backDot*> backs;
 
-	void backDisplay();
+	void backDisplay(float x, float y);
 };

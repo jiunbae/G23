@@ -33,9 +33,6 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="cBullet.cc">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="cWeapon.cc">
       <Filter>소스 파일</Filter>
     </ClCompile>

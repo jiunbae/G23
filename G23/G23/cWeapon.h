@@ -2,8 +2,8 @@
 #include "Globals.h"
 #include "cObject.h"
 
-typedef cObjectDot* cBullet;
-typedef deque<cBullet> cBullets;
+typedef cObjectDot cBullet;
+typedef deque<cBullet*> cBullets;
 
 class cWeapon : public cColor {
 public:
@@ -12,9 +12,11 @@ public:
 	~cWeapon();
 
 	void fire(const float x, const float y, const float angle);
+	void destroy(int dist_iter);
 
-	void display();
+	void display(float x, float y);
 	void loop();
+	cBullets getBullets();
 
 private:
 	float speed =1 ;

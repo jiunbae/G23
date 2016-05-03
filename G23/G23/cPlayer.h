@@ -31,7 +31,7 @@ public:
 	~cPlayer();
 
 	void initilize();
-	void display();
+	void display(float x, float y);
 	void loop();
 	void ReadKeyboard(unsigned char key, int x, int y, bool press);
 	void ReadMouse(int button, int state);

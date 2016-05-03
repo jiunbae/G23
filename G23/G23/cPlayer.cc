@@ -21,16 +21,16 @@ void cPlayer::initilize()
 	texture.loadTexture(IL_PNG, "Textures/ship.png");
 }
 
-void cPlayer::display()
+void cPlayer::display(float x, float y)
 {
-	weapon.display();
+	weapon.display(x, y);
 
 	glPushMatrix();
 		glColor3f(1, 1, 1);
-		glTranslatef(getX(), getY(), 0);
+		glTranslatef(getX() - x, getY() -y, 0);
 		glRotatef(getR(), 0, 0, 1);
-		glTranslatef(-getX(), -getY(), 0);
-		texture.drawTexture(getX(), getY(), getW(), getH());
+		glTranslatef(-getX() + x, -getY() + y, 0);
+		texture.drawTexture( getX() - x,  getY() -y , getW(), getH());
 	glPopMatrix();
 }
 

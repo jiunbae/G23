@@ -1,9 +1,8 @@
 #pragma once
 
-#include "cObject.h"
+#include "cScene.h"
 #include "cEnemy.h"
 #include "cPlayer.h"
-#include "cScene.h"
 #include "cIO.h"
 
 #define FPS 60

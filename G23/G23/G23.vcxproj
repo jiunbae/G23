@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cBullet.cc" />
     <ClCompile Include="cEnemy.cpp" />
     <ClCompile Include="cIO.cpp" />
     <ClCompile Include="cObject.cc" />
