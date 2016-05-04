@@ -33,7 +33,7 @@ void cEnemy::newEnemy(const float x, const float y, const float anglem, int size
 	if (size < 30)
 		return;
 	cAsteroid * asteroid = new cAsteroid(x, y);
-	asteroid->setVelocity((float) 0.1f * (rand() % 5) - 0.25f, (float) 0.1f * (rand() % 5) - 0.25f);
+	asteroid->setVelocity((float) 0.1f * (rand() % 20) - .9f, (float) 0.1f * (rand() % 20) - .9f);
 	asteroid->setR(rand() % 360);
 	asteroid->setState(size);
 	asteroids.push_back(asteroid);

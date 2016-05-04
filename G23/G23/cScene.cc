@@ -40,7 +40,7 @@ void cScene::backDisplay(float x, float y)
 		glPointSize(3);
 
 		glBegin(GL_POINTS);
-		glVertex2f(x + (*it)->getX(),y + (*it)->getY());
+		glVertex2f(-x + (*it)->getX(),-y + (*it)->getY());
 		glEnd();
 	}
 }
