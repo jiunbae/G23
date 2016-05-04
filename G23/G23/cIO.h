@@ -12,7 +12,8 @@ public:
 };
 
 typedef struct {
-	string name, texture;
+	int type;
+	string name, texture, script, text;
 	float x, y, r, w, h;
 } __data__object__;
 typedef struct {
@@ -34,3 +35,5 @@ public:
 	dataClass loadMap(string fileName);
 	void saveData(dataClass datas, string fileName);
 };
+
+void glText(float x, float y, string s);

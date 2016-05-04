@@ -21,5 +21,6 @@ public:
 private:
 	float speed =1 ;
 	cBullets bullets;
+	deque<timePoint> bulletTime;
 	cTimer<long, std::milli> timer;
 };

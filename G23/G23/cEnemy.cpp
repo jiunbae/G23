@@ -74,12 +74,12 @@ void cEnemy::display(float x, float y)
 void cEnemy::loop()
 {
 	for (cAsteroids::const_iterator it = asteroids.begin(); it != asteroids.end();)
-		if (!(*it)->isValid())
-		{
-			delete (*it);
-			it = asteroids.erase(it);
-		}
-		else
+		//if (!(*it)->isValid())
+		//{
+		//	delete (*it);
+		//	it = asteroids.erase(it);
+		//}
+		//else
 		{
 			(*it)->setPosition((*it)->move((*it)->getX(), (*it)->getY()));
 			++it;

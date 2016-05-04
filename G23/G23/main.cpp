@@ -85,7 +85,6 @@ void main(int argc, char** argv)
 		exit(EXIT_FAILURE);
 
 	//Game initializations
-	Game.initilize(1);
 
 	//Application loop
 	glutMainLoop();	

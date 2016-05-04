@@ -16,6 +16,8 @@ cPlayer::~cPlayer()
 
 void cPlayer::initilize()
 {
+	setPosition(0, 0);
+	setVelocity(0, 0);
 	weapon.setColor(make_tuple(255,64,64));
 	texture.initilize();
 	texture.loadTexture(IL_PNG, "Textures/ship.png");
@@ -38,8 +40,8 @@ void cPlayer::loop()
 {
 	weapon.loop();
 
-	float r = 360 / 2 / M_PI * asin((mouse.x - getX()) / sqrt(pow(mouse.x - getX(), 2.) + pow(mouse.y - getY(), 2.)));
-	r = (((mouse.y - getY() > 0) ? (180 - r) : (r)) < 0) ? (90 - fabs(r) + 270) : ((mouse.y - getY() > 0) ? (180 - r) : (r));
+	float r = 360 / 2 / M_PI * asin((mouse.x - (getX() - camera.first)) / sqrt(pow(mouse.x - (getX() - camera.first), 2.) + pow(mouse.y - (getY() - camera.second), 2.)));
+	r = (((mouse.y - (getY() - camera.second) > 0) ? (180 - r) : (r)) < 0) ? (90 - fabs(r) + 270) : ((mouse.y - (getY() - camera.second) > 0) ? (180 - r) : (r));
 	setR(r);
 
 
@@ -62,6 +64,11 @@ void cPlayer::loop()
 
 	if (holdMouse)
 		weapon.fire(getX(), getY(), getR());
+}
+
+void cPlayer::setCameraPosition(float x, float y)
+{
+	camera = { x,y };
 }
 
 void cPlayer::ReadKeyboard(unsigned char key, int x, int y, bool press)

@@ -33,6 +33,7 @@ public:
 	void initilize();
 	void display(float x, float y);
 	void loop();
+	void setCameraPosition(float x, float y);
 	void ReadKeyboard(unsigned char key, int x, int y, bool press);
 	void ReadMouse(int button, int state);
 	void ReadMouseMove(float x, float y);
@@ -44,6 +45,7 @@ private:
 	float velocity = 0.5f, acceleration;
 	int level, score, hp, mp, max_hp, max_mp;
 	bool holdMouse;
+	pair<float, float> camera;
 	cTexture texture;
 	cMouse mouse;
 	cTimer<long, milli> timer;

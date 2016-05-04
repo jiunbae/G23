@@ -4,21 +4,7 @@
 void cMouse::initilize(int _x, int _y)
 {
 	x = _x - GAME_WIDTH / 2;
-	y = -(_y - GAME_HEIGHT / 2);
-}
-string replaceAll(const string &str, const string &pattern, const string &replace)
-{
-	string result = str;
-	string::size_type pos = 0;
-	string::size_type offset = 0;
-
-	while ((pos = result.find(pattern, offset)) != string::npos)
-	{
-		result.replace(result.begin() + pos, result.begin() + pos + pattern.size(), replace);
-		offset = pos + replace.size();
-	}
-
-	return result;
+	y = _y - GAME_HEIGHT / 2;
 }
 dataClass cData::loadMap(string fileName)
 {
@@ -46,7 +32,6 @@ dataClass cData::loadMap(string fileName)
 			__data__object__ __object__;
 			for (;;)
 			{
-				stream >> temp;
 				if (temp.back() == '>')
 					break;
 				else
@@ -59,11 +44,20 @@ dataClass cData::loadMap(string fileName)
 						__object__.name = rvalue;
 					else if (!lvalue.compare("texture"))
 						__object__.texture = rvalue;
+					else if (!lvalue.compare("file"))
+						__object__.script = rvalue;
+					else if (!lvalue.compare("text"))
+						__object__.text = rvalue;
 					else if (!lvalue.compare("x"))
 						__object__.x = atoi(rvalue.c_str());
 					else if (!lvalue.compare("y"))
 						__object__.y = atoi(rvalue.c_str());
+					else if (!lvalue.compare("w"))
+						__object__.w = atoi(rvalue.c_str());
+					else if (!lvalue.compare("h"))
+						__object__.h = atoi(rvalue.c_str());
 				}
+				stream >> temp;
 			}
 
 			res.objects.push_back(__object__);
@@ -99,4 +93,12 @@ dataClass cData::loadMap(string fileName)
 
 	stream.close();
 	return res;
+}
+
+void glText(float x, float y, string s)
+{
+	int type = 8;
+	glRasterPos3f(x, y, 0);
+	for (char c : s)
+		glutBitmapCharacter((void*)type, c);
 }
