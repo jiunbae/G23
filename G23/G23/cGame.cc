@@ -104,6 +104,10 @@ function<float(pair<float, float>, pair<float, float>)> distDot = [](pair<float,
 
 bool cGame::Loop()
 {
+	if (timer.getDeltaPoint() < (5))
+		return true;
+	timer.setDeltaPoint();
+
 	cAsteroids asteroids = enemys.getAsteroids();
 	cBullets bullets = player.weapon.getBullets();
 
