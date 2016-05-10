@@ -1,2 +1,270 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="cAsteroid" Collapsed="true">
+    <Position X="10.5" Y="7" Width="1.5" />
+    <InheritanceLine Type="cRotate" ManuallyRouted="true">
+      <Path>
+        <Point X="13" Y="2.062" />
+        <Point X="13" Y="2.421" />
+        <Point X="12.508" Y="2.421" />
+        <Point X="12.508" Y="5.38" />
+        <Point X="11.25" Y="5.38" />
+        <Point X="11.25" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cEnemy" Collapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <InheritanceLine Type="cColor" ManuallyRouted="true">
+      <Path>
+        <Point X="6" Y="2.062" />
+        <Point X="6" Y="5.157" />
+        <Point X="7.75" Y="5.157" />
+        <Point X="7.75" Y="5.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQACAACAAAASUAAAAAAEEAAAAEAAgAAAgAAAQAAAAA=</HashCode>
+      <FileName>cEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cMouse">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAAAAAAAAAAAAAAAEAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dataClass" Collapsed="true">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAQAAAAAAAEIAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cData">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cWeapon" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAIAAKAAAAAAAAEAAAAEAAQAABIAAAEAAAAA=</HashCode>
+      <FileName>cWeapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cColor" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAgAAIAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cRotate" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABCAAACQA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cDot&lt;T&gt;" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABAAAAgAAAAAGAAACAAAAAAAAAABgAGAAAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cVolume&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAABAAAgAAAAAAAAAAAQAgAgAAIQAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cMove&lt;T&gt;" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAAAAAQAAAIBACBAoABAAAAAgAAgAAAAQBACABQIAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cObjectDot" Collapsed="true">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="cMove&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="11.25" Y="2.062" />
+        <Point X="11.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAACAAgAAAAAAAAAAAAAAAEAAACAAAAAAQ=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cObjectBox" Collapsed="true">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="cObjectDot" ManuallyRouted="true">
+      <Path>
+        <Point X="11.25" Y="5.07" />
+        <Point X="11.25" Y="5.406" />
+        <Point X="12.5" Y="5.406" />
+        <Point X="12.5" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cGame" Collapsed="true">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEQGAAAKQgAIIAAAAgAAANIAAwEAgAAFAFAQAAAAAAI=</HashCode>
+      <FileName>cGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cPlayer" Collapsed="true">
+    <Position X="11.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAACCAgQoiQABAAAIAFEACAEAAgQAEERCABAAAAA=</HashCode>
+      <FileName>cPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cCamera" Collapsed="true">
+    <Position X="14" Y="6" Width="1.5" />
+    <InheritanceLine Type="cRotate" ManuallyRouted="true">
+      <Path>
+        <Point X="13" Y="2.062" />
+        <Point X="13" Y="2.443" />
+        <Point X="14.75" Y="2.443" />
+        <Point X="14.75" Y="5.375" />
+        <Point X="14.75" Y="5.375" />
+        <Point X="14.75" Y="6" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>cScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cScene" Collapsed="true">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAACAAAAAAAAAAAAAAIAAAEAAAAAABAAAAAAIAA=</HashCode>
+      <FileName>cScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cTexture">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBIAAABSAwAQAAAAAAAAAAAAAAAABAIAAAgA=</HashCode>
+      <FileName>cTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cTimer&lt;R, T&gt;" Collapsed="true">
+    <Position X="16" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAJAAIAIAAAAgAACAAAAAAAAAAEEAGA=</HashCode>
+      <FileName>cTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="__unnamed_struct_01f8_1">
+    <Position X="19.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAFAgAIQAhhAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_01f8_2">
+    <Position X="17.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABIAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="cAsteroids" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cEnemy.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="__data__object__" Collapsed="true">
+    <Position X="19.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+    <AliasOfLine Type="__unnamed_struct_01f8_1" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="6.25" />
+        <Point X="20.25" Y="5.812" />
+      </Path>
+    </AliasOfLine>
+  </Typedef>
+  <Typedef Name="__data__astroids__" Collapsed="true">
+    <Position X="17.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cIO.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cBullet" Collapsed="true">
+    <Position X="13" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cWeapon.h</FileName>
+    </TypeIdentifier>
+    <AliasOfLine Type="cObjectDot" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="4.625" />
+        <Point X="12.417" Y="4.625" Type="JumpStart" />
+        <Point X="12.591" Y="4.625" Type="JumpEnd" />
+        <Point X="13" Y="4.625" />
+      </Path>
+    </AliasOfLine>
+  </Typedef>
+  <Typedef Name="cBullets" Collapsed="true">
+    <Position X="13" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cWeapon.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="colorByte" Collapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="colorType" Collapsed="true">
+    <Position X="16" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cObject.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="timePoint" Collapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cTimer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="GAME_STATE" Collapsed="true">
+    <Position X="16" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAABAAgAAAAhAAAAAAAAAACAAAAAAAAACAAAA=</HashCode>
+      <FileName>cGame.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

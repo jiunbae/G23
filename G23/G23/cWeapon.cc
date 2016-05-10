@@ -18,6 +18,11 @@ cWeapon::~cWeapon()
 	});
 }
 
+void cWeapon::initilize()
+{
+	bullets.clear();
+}
+
 void cWeapon::fire(float x, float y, float angle)
 {
 	if (timer.getDeltaPoint() > 500)

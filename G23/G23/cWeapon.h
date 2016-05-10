@@ -11,6 +11,7 @@ public:
 	cWeapon(colorType _color);
 	~cWeapon();
 
+	void initilize();
 	void fire(const float x, const float y, const float angle);
 	void destroy(int dist_iter);
 

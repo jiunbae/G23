@@ -11,6 +11,7 @@ cScene::~cScene(void)
 
 void cScene::initilize()
 {
+	backs.clear();
 	for (int i = 0; i < 1000;++i)
 	{
 		backDot * newDot = new backDot(rand() % GAME_WIDTH * 10 - GAME_WIDTH * 5, rand() % GAME_HEIGHT * 10 - GAME_HEIGHT * 5,

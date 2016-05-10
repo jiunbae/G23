@@ -38,6 +38,7 @@ bool cGame::initilize(string name)
 
 	scene.initilize();
 	player.initilize();
+	player.weapon.initilize();
 	return true;
 }
 

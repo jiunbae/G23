@@ -1,5 +1,5 @@
 <type map >
-	<info title=start mission=find_station size=2000 >
+	<info title=map1 mission=find_station size=2000 >
 	<astroids count=200 size=35 texture=Textures/astorids1.png >
 	<object x=-1500 y=0 w=150 h=150 name=station texture=Textures/station.png file=levels/map2.xml text=Finish! state=END >
 </type >

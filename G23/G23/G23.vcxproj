@@ -41,6 +41,10 @@
     <ClInclude Include="cTimer.h" />
     <ClInclude Include="Globals.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4A6FC8E8-9CDC-485A-BB90-CF3E35459632}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
