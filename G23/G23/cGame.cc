@@ -134,12 +134,9 @@ bool cGame::Loop()
 		}
 	}
 	
-	if (timer.getDeltaPoint() > 0)
-	{
-		timer.setDeltaPoint();
-		if (distDot(camera.getPosition(), player.getPosition()) > 30.f)
-			camera.setPosition({ camera.getX() + (player.getX() - camera.getX()) * 0.1f, camera.getY() + (player.getY() - camera.getY()) * 0.1f });
-	}
+	if (distDot(camera.getPosition(), player.getPosition()) > 30.f)
+		camera.setPosition({ camera.getX() + (player.getX() - camera.getX()) * 0.1f, camera.getY() + (player.getY() - camera.getY()) * 0.1f });
+	
 
 	display();
 
